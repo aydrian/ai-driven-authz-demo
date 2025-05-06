@@ -16,10 +16,10 @@ declare module "bun" {
 const methodToAction: { [key: string]: string } = {
   GET: "read",
   HEAD: "read",
-  POST: "create",
-  PUT: "update",
-  PATCH: "update",
-  DELETE: "delete"
+  POST: "manage",
+  PUT: "manage",
+  PATCH: "manage",
+  DELETE: "manage"
 };
 
 const app = new Hono();
