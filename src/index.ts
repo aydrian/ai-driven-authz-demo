@@ -44,6 +44,7 @@ const authorizeProject = createMiddleware(async (c, next) => {
 
   // Calculate risk score for the current request
   const riskScore = assessRisk(c);
+  const score = { type: "Integer", id: riskScore.toString() };
 
   // Simulate user identity from headers
   const user = c.req.header("Authorization")?.split(" ")[1]
@@ -62,7 +63,7 @@ const authorizeProject = createMiddleware(async (c, next) => {
 
   console.log({ actor, action, resource, riskScore });
   const isAllowed = await oso.authorize(actor, action, resource, [
-    ["risk_score", { type: "Number", id: riskScore.toString() }]
+    ["has_risk_score", actor, score]
   ]);
   if (!isAllowed) {
     throw new HTTPException(403, { message: "Forbidden" });
@@ -74,6 +75,10 @@ const authorizeProject = createMiddleware(async (c, next) => {
 // Project routes
 app.get("/project/:projectId", authorizeProject, (c) => {
   return c.json({ message: "You have access to this resource!" });
+});
+
+app.post("/project/:projectId", authorizeProject, (c) => {
+  return c.json({ message: "You have access to manage this resource!" });
 });
 
 export default app;
