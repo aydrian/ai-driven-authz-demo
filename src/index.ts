@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { basicAuth } from "hono/basic-auth";
+import { showRoutes } from "hono/dev";
 import { createMiddleware } from "hono/factory";
 import { HTTPException } from "hono/http-exception";
 import { Oso } from "oso-cloud";
@@ -80,5 +81,7 @@ app.get("/project/:projectId", authorizeProject, (c) => {
 app.post("/project/:projectId", authorizeProject, (c) => {
   return c.json({ message: "You have access to manage this resource!" });
 });
+
+showRoutes(app);
 
 export default app;
