@@ -125,3 +125,7 @@ The demo uses a middleware that:
 4. Checks authorization using Oso Cloud, considering the user, action, resource, and risk score
 
 If authorization fails, a 403 Forbidden error is returned.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

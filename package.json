@@ -1,5 +1,23 @@
 {
   "name": "ai-driven-auth-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-driven authorization demo using Oso Cloud",
+  "author": "Aydrian Howard <howdy@itsaydrian.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aydrian/ai-driven-authz-demo.git"
+  },
+  "keywords": [
+    "ai",
+    "authorization",
+    "oso",
+    "demo"
+  ],
+  "engines": {
+    "bun": ">=1.0.0"
+  },
   "scripts": {
     "dev": "bun run --hot src/index.ts"
   },
