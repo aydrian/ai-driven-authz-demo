@@ -84,7 +84,7 @@ test "default" {
 
 This policy defines the rules for who can access which resources and under what conditions. It takes into account the user's role, the action they're trying to perform, and the risk score associated with the request.
 
-You will want to add facts in Oso that assign Alice and Bob to the appropriate groups.
+You will want to add facts in Oso that assign Alice and Bob to the appropriate roles.
 
 ## Testing the Routes
 
