@@ -1,8 +1,8 @@
-# AI Driven Authorization Demo
+# 🤖 AI Driven Authorization Demo
 
 This demo showcases an AI-driven authorization system using Hono, Oso Cloud, and risk assessment.
 
-## Setup
+## 🚀 Setup
 
 To install dependencies:
 
@@ -16,14 +16,14 @@ To run:
 bun run dev
 ```
 
-## Environment Variables
+## 🔐 Environment Variables
 
 Make sure to set the following environment variables:
 
 - `OSO_URL`: The URL for your Oso Cloud instance
 - `OSO_AUTH`: The AUTH key for Oso Cloud
 
-## Authentication
+## 🔑 Authentication
 
 The demo uses Basic Authentication. There are two predefined users:
 
@@ -36,7 +36,7 @@ The demo uses Basic Authentication. There are two predefined users:
    - Username: bob
    - Password: password456
 
-## Supported Routes
+## 🛣️ Supported Routes
 
 | Method | Route               | Description                                                                 | Action |
 | ------ | ------------------- | --------------------------------------------------------------------------- | ------ |
@@ -45,9 +45,9 @@ The demo uses Basic Authentication. There are two predefined users:
 
 Both routes use the authorization middleware to check access before processing the request.
 
-## Oso Authorization Policy
+## 📜 Oso Authorization Policy
 
-This demo uses Oso Cloud for authorization. The authorization policy is written in Polar, Oso's declarative policy language. Below is the Polar code for the authorization policy:
+This demo uses [Oso Cloud](https://www.osohq.com/) for authorization. The authorization policy is written in Polar, Oso's declarative policy language. Below is the Polar code for the authorization policy:
 
 ```Polar
 actor User {}
@@ -86,7 +86,7 @@ This policy defines the rules for who can access which resources and under what 
 
 You will want to add facts in Oso that assign Alice and Bob to the appropriate roles.
 
-## Testing the Routes
+## 🧪 Testing the Routes
 
 When testing the routes, you can use either of the predefined users' credentials.
 
@@ -115,7 +115,7 @@ To test with Bob's credentials, replace the Authorization header with:
 -H 'Authorization: Basic Ym9iOnBhc3N3b3JkNDU2'
 ```
 
-## Authorization Logic
+## 🔒 Authorization Logic
 
 The demo uses a middleware that:
 
@@ -126,6 +126,6 @@ The demo uses a middleware that:
 
 If authorization fails, a 403 Forbidden error is returned.
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
